@@ -1,3 +1,6 @@
+# jet brain IDE
+.idea/
+
 *.rbc
 capybara-*.html
 .rspec
