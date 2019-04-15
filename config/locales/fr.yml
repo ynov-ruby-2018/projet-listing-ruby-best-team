@@ -30,4 +30,8 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Bonjour le Monde"
+  search: "Rechercher"
+  search_placeholder: "Rechercher une annonce"
+  main_title: "Petites annonces"
+  create_ad_btn: "Créer une annonce"
+  login_btn: "Me connecter"

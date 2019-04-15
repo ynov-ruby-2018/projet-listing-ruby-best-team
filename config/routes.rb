@@ -4,6 +4,8 @@ Rails.application.routes.draw do
 
   localized do
     root to: 'default#index'
+
+    resources :listings
   end
 
 end

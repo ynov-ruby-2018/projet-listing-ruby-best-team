@@ -18,14 +18,15 @@
     <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Listings</a>
+          <a class="navbar-brand" href="#"><%= t('main_title') %></a>
         </div>
         <ul class="nav navbar-nav navbar-dark" style="margin-left: auto;">
           <li style="margin-right: 1em;">
+            <a href="#"><button type="button" class="btn btn-info"><%= t('login_btn') %></button></a>
             <% if user_signed_in? %>
               <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-info" %>
             <% else %>
-              <%= link_to 'Login', new_user_session_path, class: "btn btn-info" %>
+              <%= link_to t('login_btn'), new_user_session_path, class: "btn btn-info" %>
               <%= link_to 'SignUp', new_user_registration_path, class: "btn btn-info" %>
             <% end %>
           </li>
@@ -39,10 +40,11 @@
              <% end %>
             </select>
           </div>
-          <li class="col-xs-2" style="margin-left:1em;" ><a href="#"><button type="button" class="btn btn-success">Create my Listing</button></a></li>
+          <li class="col-xs-2" style="margin-left:1em;" ><a href="#"><button type="button" class="btn btn-success"><%= t('create_ad_btn') %></button></a></li>
         </ul>
       </div>
     </nav>
     <%= yield %>
   </body>
+
 </html>
