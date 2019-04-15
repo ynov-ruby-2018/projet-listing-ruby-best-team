@@ -1,0 +1,12 @@
+<%= link_to "Nouveau produit", new_account_product_path, class: 'btn btn-primary' %>
+<br />
+<br />
+<table class="table table-thin table-striped">
+  <% @products.each do |product| %>
+    <tr>
+
+      <td><%= link_to product.title, edit_account_product_path(product.id) %></td>
+      <td style="width: 30px;"><%= link_to 'x', account_product_path(product.id), method: 'delete', 'data-confirm': "Are you sure?!" %>
+    </tr>
+  <% end %>
+</table>

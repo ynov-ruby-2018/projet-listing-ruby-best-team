@@ -1,11 +1,18 @@
 Rails.application.routes.draw do
-  devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
   localized do
+    devise_for :users
+
     root to: 'default#index'
 
-    resources :listings
+    root to: 'products#index'
+    #resources :currencies, only: :show
+    resources :products #défini les routes pour products (get/set)
+
+    namespace :account do
+      root to: 'dashboard#index'
+      resources :products
+    end
   end
 
 end
