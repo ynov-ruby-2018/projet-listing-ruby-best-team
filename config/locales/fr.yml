@@ -30,4 +30,5 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 fr:
-  hello: "Bonjour le Monde"
+  search: "Rechercher"
+  search_placeholder: "Rechercher une annonce"
