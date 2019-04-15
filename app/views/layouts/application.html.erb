@@ -22,7 +22,12 @@
         </div>
         <ul class="nav navbar-nav navbar-dark" style="margin-left: auto;">
           <li style="margin-right: 1em;">
-            <a href="#"><button type="button" class="btn btn-info">login</button></a>
+            <% if user_signed_in? %>
+              <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: "btn btn-info" %>
+            <% else %>
+              <%= link_to 'Login', new_user_session_path, class: "btn btn-info" %>
+              <%= link_to 'SignUp', new_user_registration_path, class: "btn btn-info" %>
+            <% end %>
           </li>
           <div class="">
             <select onchange="window.location.href=this.value" class="form-control">
