@@ -4,8 +4,12 @@ Rails.application.routes.draw do
 
   localized do
     root to: 'default#index'
-
     resources :listings
+
+    resources :account do
+      get 'user', on: :collection
+    end
+
   end
 
 end
