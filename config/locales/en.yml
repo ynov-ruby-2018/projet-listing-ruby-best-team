@@ -31,4 +31,7 @@
 
 en:
   search: "Search"
-  search_placeholder: "Rechercher une annonce"
+  search_placeholder: "Search some ads"
+  main_title: "Littles ads"
+  create_ad_btn: "Create an ad"
+  login_btn: "Login"
