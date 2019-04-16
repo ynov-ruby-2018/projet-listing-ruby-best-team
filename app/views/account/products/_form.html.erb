@@ -1,0 +1,20 @@
+<% if @product.errors.messages.any? %>
+  <ul>
+    <% @product.errors.messages.each do |key, errors| %>
+      <% errors.each do |error| %>
+        <li><%= error %></li>
+      <% end %>
+    <% end %>
+  </ul>
+<% end %>
+
+<label>Title</label>
+<%= text_field_tag 'product[title]', @product.title, class: 'form-control' %>
+
+<label>Description</label>
+<%= text_area_tag 'product[description]', @product.description, class: 'form-control' %>
+
+<label>Price</label>
+<%= number_field 'product[price]', @product.price, class: 'form-control' %>
+
+<%= submit_tag "Save", class:"btn btn-primary" %>

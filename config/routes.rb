@@ -9,7 +9,12 @@ Rails.application.routes.draw do
     resources :account do
       get 'user', on: :collection
     end
-
   end
 
+  namespace :api, format: 'json' do
+      namespace :v1 do
+          post "auth", to: "auth#create"
+          get "locales", to: "locales#index", as: "locales"
+      end
+  end
 end
