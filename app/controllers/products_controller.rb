@@ -1,13 +1,6 @@
 class ProductsController < ApplicationController
 
   def index
-  #  @products = Search.new(params[:query]).perform
-    @products = Product.all
+    @products = Search.new(params[:searchField]).perform
   end
-
-  def show
-    product = Product.find(params[:id])
-    @product = ProductDecorator.new(product).to_product
-  end
-
 end
