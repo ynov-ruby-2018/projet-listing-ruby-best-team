@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Listings</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </head>
+
+  <body>
+    <nav class="navbar navbar-inverse navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <%= link_to t('main_title'), root_path , method: :get, class: "navbar-brand" %>
+        </div>
+        <ul class="nav navbar-nav navbar-dark" style="margin-left: auto;">
+          <li style="margin-right: 1em;">
+            <% if user_signed_in? %>
+              <%= link_to t('logout_btn'), destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+              <%= link_to t('myaccount'), edit_user_registration_path, method: :get, class: "btn btn-success" %>
+            <% else %>
+              <%= link_to t('login_btn'), new_user_session_path, class: "btn btn-info" %>
+              <%= link_to t('sign_up_btn'), new_user_registration_path, class: "btn btn-info" %>
+            <% end %>
+          </li>
+          <div class="">
+            <select onchange="window.location.href=this.value" class="form-control">
+             <% I18n.available_locales.each do |loc|%>
+                <option value='<%=url_for(locale: loc.to_s) %>'
+                <%= "selected" if I18n.locale == loc %>>
+                <%= loc.upcase %>
+                </option>
+             <% end %>
+            </select>
+          </div>
+          <li class="col-xs-2" style="margin-left:1em;" >
+            <%= link_to t('create_ad_btn'), new_account_product_path, class: 'btn btn-primary' %>
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+
+</html>

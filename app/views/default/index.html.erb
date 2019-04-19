@@ -1,0 +1,18 @@
+
+<div class="container">
+  <div class="">
+    <div style="color: white; text-align:center; font-size: 30px; margin-top:20%">
+      <%= t('search_title') %>
+    </div>
+    <div id="search-box" class="col-lg-6" style="margin-top: 2em">
+      <div class="input-group">
+      <span class="input-group-btn" style="width:100%">
+        <%= form_tag products_path, method: :get, style: 'display:flex' do %>
+          <%= submit_tag t('search'), class: 'btn btn-success' %>
+          <%= text_field_tag "searchField", nil, class: 'form-control', style: 'margin-left:20px', placeholder: t('search_placeholder') %>
+        <% end %>
+      </span>
+      </div><!-- /input-group -->
+    </div><!-- /.col-lg-6 -->
+  </div><!-- /.row -->
+</div>

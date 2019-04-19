@@ -1,0 +1,7 @@
+<div class="row" style="text-align:center; margin:auto;">
+  <div class="col-xs-12">
+    <%= form_tag account_product_path(@product.id), method: :put, multipart: true, class: 'form' do %>
+      <%= render partial: 'form' %>
+    <% end %>
+  </div>
+</div>
