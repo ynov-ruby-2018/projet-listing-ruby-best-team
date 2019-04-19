@@ -13,10 +13,11 @@ Rails.application.routes.draw do
       root to: 'dashboard#index'
       resources :products
     end
-    
+
     resources :account do
       get 'user', on: :collection
     end
+
   end
 
 

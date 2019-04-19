@@ -23,7 +23,8 @@
         <ul class="nav navbar-nav navbar-dark" style="margin-left: auto;">
           <li style="margin-right: 1em;">
             <% if user_signed_in? %>
-              <%= link_to t('logout_btn'), destroy_user_session_path, method: :delete, class: "btn btn-info" %>
+              <%= link_to t('logout_btn'), destroy_user_session_path, method: :delete, class: "btn btn-warning" %>
+              <%= link_to t('myaccount'), edit_user_registration_path, method: :get, class: "btn btn-success" %>
             <% else %>
               <%= link_to t('login_btn'), new_user_session_path, class: "btn btn-info" %>
               <%= link_to t('sign_up_btn'), new_user_registration_path, class: "btn btn-info" %>
