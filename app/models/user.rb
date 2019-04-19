@@ -4,6 +4,8 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+  has_many :products
+  
    def generate_token
       self.auth_token = SecureRandom.uuid
       if self.save
@@ -12,4 +14,5 @@ class User < ApplicationRecord
           return nil
       end
    end
+  
 end

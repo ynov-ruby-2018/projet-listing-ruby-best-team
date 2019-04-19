@@ -31,6 +31,7 @@
 
 fr:
   search: "Rechercher"
+  search_title: "Vous allez trouver..."
   search_placeholder: "Rechercher une annonce"
   main_title: "Petites annonces"
   create_ad_btn: "Créer une annonce"
@@ -38,4 +39,3 @@ fr:
   logout_btn: "Déconnection"
   sign_up_btn: "Inscription"
   myaccount: "Mon Compte"
-
