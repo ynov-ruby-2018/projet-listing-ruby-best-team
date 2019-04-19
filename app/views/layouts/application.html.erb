@@ -40,7 +40,9 @@
              <% end %>
             </select>
           </div>
-          <li class="col-xs-2" style="margin-left:1em;" ><a href="#"><button type="button" class="btn btn-success"><%= t('create_ad_btn') %></button></a></li>
+          <li class="col-xs-2" style="margin-left:1em;" >
+            <%= link_to t('create_ad_btn'), new_account_product_path, class: 'btn btn-primary' %>
+          </li>
         </ul>
       </div>
     </nav>

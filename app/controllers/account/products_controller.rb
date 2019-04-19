@@ -44,8 +44,8 @@ class Account::ProductsController < Account::AccountController
   def product_params
     params.require(:product).permit(
       :title,
-      :content,
-      :category_id,
+      :description,
+      :price,
       :picture,
        {tag_ids: []}
     ).merge(user_id: current_user.id)
