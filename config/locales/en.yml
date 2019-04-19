@@ -31,6 +31,7 @@
 
 en:
   search: "Search"
+  search_title: "You're going to find..."
   search_placeholder: "Search some ads"
   main_title: "Littles ads"
   create_ad_btn: "Create an ad"
@@ -38,4 +39,3 @@ en:
   logout_btn: "Logout"
   sign_up_btn: "Signup"
   myaccount: "My Account"
-

@@ -1,0 +1,21 @@
+<div class="container" style="">
+<br />
+<br />
+
+<table class="table table-thin table-striped" style="color:white;">
+  <% @products.each do |product| %>
+
+
+
+    <tr>
+        <td><%= product.created_at %></td>
+        <br />
+        <td><%= product.title %></td>
+
+    </tr>
+  <% end %>
+</table>
+<br />
+<%= link_to "Nouveau Produit", new_account_product_path, class: 'btn btn-primary' %>
+
+</div>

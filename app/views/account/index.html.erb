@@ -1,0 +1,18 @@
+<!--<%= link_to "Nouveau post", new_admin_post_path, class: 'btn btn-primary' %>
+--><br />
+<br />
+<table class="table table-thin table-striped">
+  <% @products.each do |product| %>
+    <tr>
+    <!--<  <td>
+        % if post.picture.attached? %>
+          <%= image_tag post.picture, width: '100px' %>
+        <% end %>
+      </td>
+      <td><%= link_to post.title, edit_admin_post_path(post.id) %></td>
+      <td style="width: 30px;"><%= link_to 'x', admin_post_path(post.id), method: 'delete', 'data-confirm': "Are you sure?!" %>
+    -->
+    <td><%= product.title %></td>
+    </tr>
+  <% end %>
+</table>

@@ -7,4 +7,9 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def products
+    @products = Search.new(params[:query]).perform
+    render template: 'search_results'
+  end
+
 end
