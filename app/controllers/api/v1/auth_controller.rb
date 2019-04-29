@@ -16,4 +16,6 @@ class Api::V1::AuthController < Api::ApiController
       status: 401
     end
   end
+
+
 end
