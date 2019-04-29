@@ -9,11 +9,11 @@ class Api::V1::ApiController < Api::ApiController
         user = User.find_by(auth_token: request.headers["token"])
         products = Product.all
         if user.nil?
-            render json: {success: true, errors: [
+            render json: {success: false, errors: [
             {user: ["please authenticate on /api/v1/auth "]}
             ]}
         else
-            render json: {success: false, products: products} 
+            render json: {success: true, products: products} 
         end 
     end
 
