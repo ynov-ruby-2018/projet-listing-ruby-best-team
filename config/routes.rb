@@ -19,14 +19,17 @@ Rails.application.routes.draw do
     end
   end
 
+  #API REST 
   namespace :api, format: 'json' do
-      namespace :v1 do
-          post "auth", to: "auth#create"
-          get "locales", to: "locales#index", as: "locales"
-          get "product", to: "api#productAll"
-      end
+    namespace :v1 do
+        post "auth", to: "auth#create"
+        get "locales", to: "locales#index", as: "locales"
+        
 
-
+        get "product", to: "api#productAll"
+        get 'product/:id', to: "api#productSingle"
+        
+    end
   end
 
 end
