@@ -25,10 +25,12 @@ Rails.application.routes.draw do
         post "auth", to: "auth#create"
         get "locales", to: "locales#index", as: "locales"
         
-
+        #product routes
         get "product", to: "api#productAll"
         get 'product/:id', to: "api#productSingle"
-        
+
+        #user routes
+        get "/account", to: "api#profile"
     end
   end
 
