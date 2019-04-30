@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       namespace :v1 do
           post "auth", to: "auth#create"
           get "locales", to: "locales#index", as: "locales"
-          get "product", to: "api#index"
+          get "product", to: "api#productAll"
       end
 
 
