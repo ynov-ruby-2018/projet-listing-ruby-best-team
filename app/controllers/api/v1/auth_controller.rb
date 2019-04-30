@@ -8,7 +8,8 @@ class Api::V1::AuthController < Api::ApiController
     end
 
     if token
-      render json: {success: true, token: token}
+      render json: {success: true, token: token},
+      status: 200
     else
       render json: {success: false, errors: [
         {user: ["Invalid password"]}

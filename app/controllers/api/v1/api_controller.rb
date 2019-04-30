@@ -5,15 +5,20 @@ class Api::V1::ApiController < Api::ApiController
    #     render json: { product: products }, status: :ok
    # end
 
+   before_action :checkToken
     def index
-        user = User.find_by(auth_token: request.headers["token"])
         products = Product.all
+        render json: {success: true, products: products}  
+    end
+
+    def checkToken 
+        user = User.find_by(auth_token: request.headers["token"])
         if user.nil?
             render json: {success: false, errors: [
             {user: ["please authenticate on /api/v1/auth "]}
             ]}
         else
-            render json: {success: true, products: products} 
+            return true
         end 
     end
 
